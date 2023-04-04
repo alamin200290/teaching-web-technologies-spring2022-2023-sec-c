@@ -1,0 +1,25 @@
+#d2{   
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    /* margin: 10px 15px; */
+    padding: 10px;
+    position: absolute;
+    left: 110px;
+    top: 60px;
+    border-radius: 50%;
+    
+}
+
+#d1{   
+    border: 1px solid #000; 
+    background-color: green;
+    width: 350px;
+    height: 250px;
+    position: relative;
+    left: 300px;
+    top: 100px;
+}
+
+
+    
