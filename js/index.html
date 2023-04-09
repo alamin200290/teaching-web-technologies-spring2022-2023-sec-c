@@ -1,0 +1,79 @@
+<html lang="en">
+<head>
+    <title>JS Example</title>
+    <style>
+        div{
+            background-color: yellowgreen;
+            width: 100px;
+            height: 100px;
+            border-radius: 10%;
+        }
+    </style>
+</head>
+<body>
+        <h1>JS Example</h1>
+        <h1 id="h2">JS Example</h1>
+        
+        <div></div>
+        
+        <input type="text" name="name" value="" onkeyup="f2()">
+        <input type="button" name="submit" value="Submit" onclick=" f2()">
+        <p></p>
+
+        <script>
+            //name = "alamin";
+            //var id = 123;
+            let cgpa = 3.5;
+            //const name = "alamin";
+            //let student = ['alamin', 2.5, 'alamin@aiub.edu'];
+            //student[1];
+
+            // function abc(){
+
+            // }
+
+            // let f1 = ()=>{
+
+            // }
+
+            // if(){
+
+            // }else{
+
+            // }
+
+            // for(let a=0; a<10; a++){
+
+            // }
+
+            //alert('test');
+            //console.log('testing .... ');
+            //document.write('Test JS example...');
+            
+            function abc(){
+            let obj = document.getElementsByTagName('h1')[0];
+                obj.innerHTML = "TEST";
+                document.getElementById('h2').innerHTML = "Another JS Example";
+            }
+
+            function f1(){
+                document.getElementsByTagName('div')[0].style.background = "green";
+            }
+
+            function f2(){
+                let username = document.getElementsByTagName('input')[0].value;
+                //alert(username);
+
+                if(username == ""){
+                 let obj = document.getElementsByTagName('p')[0];   
+                //console.log('test');
+                obj.innerHTML = "Null value ...";
+                obj.style.color = "red";
+                
+                }else{
+                    document.getElementById('h2').innerHTML = username;
+                }
+            }
+        </script>
+</body>
+</html>
