@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <title>JS Example</title>
+    <style>
+        div{
+            background-color: yellowgreen;
+            width: 100px;
+            height: 100px;
+            border-radius: 10%;
+        }
+    </style>
+</head>
+<body>
+        <h1 id="head1">JS Example</h1>
+        <h1 id="h2">JS Example</h1>
+        
+        <div></div>
+        <input type="text" id="username" name="name" value="" onkeyup="f2()">
+        <input type="button" name="submit" value="Submit" onclick=" ajax()">
+        <input type="button" name="submit" value="click" onclick="alert('another test')">
+        <p></p>
+
+        <script>
+            
+            function abc(){
+            let obj = document.getElementsByTagName('h1')[0];
+                obj.innerHTML = "TEST";
+                document.getElementById('h2').innerHTML = "Another JS Example";
+            }
+
+            function f1(){
+                document.getElementsByTagName('div')[0].style.background = "green";
+            }
+
+            function f2(){
+                let username = document.getElementsByTagName('input')[0].value;
+                //alert(username);
+
+                if(username == ""){
+                 let obj = document.getElementsByTagName('p')[0];   
+                //console.log('test');
+                obj.innerHTML = "Null value ...";
+                obj.style.color = "red";
+                
+                }else{
+                    document.getElementById('h2').innerHTML = username;
+                }
+                
+            }
+
+            function ajax(){
+        
+                let username = document.getElementById('username').value;
+                let password = "abc";
+                let email ='alamin@aiub.edu';
+                let user = {
+                                'username': username,
+                                'email': email,
+                                'password': password,
+                            };
+                let data = JSON.stringify(user);
+
+                let xhttp = new XMLHttpRequest();
+                xhttp.open('post', 'abc.php', true);
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhttp.send('user='+data);
+                xhttp.onreadystatechange = function(){
+                    
+                    if(this.readyState == 4 && this.status == 200){
+                        //alert(this.responseText);
+
+                        let user =JSON.parse(this.responseText);
+                        document.getElementById('head1').innerHTML = user.email;
+                    }
+               }
+            }
+
+        </script>
+</body>
+</html>
